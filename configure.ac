@@ -2341,9 +2341,12 @@ if test -z "$ssl_backends" -o "x$OPT_WOLFSSL" != xno; then
 
       dnl Recent WolfSSL versions build without SSLv3 by default
       dnl WolfSSL needs configure --enable-opensslextra to have *get_peer*
+      dnl DES* is needed for NTLM support and lives in the OpenSSL compatibility
+      dnl layer
       AC_CHECK_FUNCS(wolfSSLv3_client_method \
                      wolfSSL_get_peer_certificate \
-                     wolfSSL_UseALPN)
+                     wolfSSL_UseALPN \
+                     wolfSSL_DES_set_odd_parity)
 
       if test -n "$wolfssllibpath"; then
         dnl when shared libs were found in a path that the run-time
