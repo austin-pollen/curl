@@ -636,7 +636,7 @@ int netware_init(void);
 #if defined(USE_OPENSSL) || defined(USE_WINDOWS_SSPI) || \
     defined(USE_GNUTLS) || defined(USE_NSS) || defined(USE_SECTRANSP) || \
     defined(USE_OS400CRYPTO) || defined(USE_WIN32_CRYPTO) || \
-    defined(USE_MBEDTLS)
+    defined(USE_MBEDTLS) || defined(USE_WOLFSSL)
 
 #define USE_NTLM
 
